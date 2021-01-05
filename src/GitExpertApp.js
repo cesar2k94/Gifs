@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { AddCategory } from './Componentes/AddCategory';
 
 export const GitExpertApp = () => {
 
@@ -6,15 +7,16 @@ export const GitExpertApp = () => {
    
     const [categorias, setCategorias] = useState(['Chelsea', 'Arsenal', 'Leeds']);
 
-     const handleAdd = () =>{
-        setCategorias(categ =>[ ...categ, "Fulham"]); 
-     }
+    //  const handleAdd = () =>{
+    //     setCategorias(categ =>[ ...categ, "Fulham"]); 
+    //  }
 
     return (
         <>
           <h2>GitExpertApp</h2>
+          <AddCategory/>
           <hr />  
-          <button onClick= {handleAdd} >Agregar</button>
+         
           <ol>
               {
                   categorias.map( category =>{
