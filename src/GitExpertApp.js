@@ -14,7 +14,7 @@ export const GitExpertApp = () => {
     return (
         <>
           <h2>GitExpertApp</h2>
-          <AddCategory/>
+          <AddCategory setCategorias={setCategorias}/>
           <hr />  
          
           <ol>

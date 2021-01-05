@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {GitExpertApp} from '../GitExpertApp';
 
-export const AddCategory = () => {
+export const AddCategory = ({setCategorias}) => {
 
 
     const [inputValue, setinputValue] = useState('Hola')
@@ -12,7 +13,13 @@ export const AddCategory = () => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()//evitar comportamiento por defecto del form
-        console.log('Submit hecho');
+      
+        if (inputValue.trim().length>2) {
+            setCategorias(categ=>[...categ, inputValue])
+            setinputValue('')
+        }
+        
+        //console.log('Submit hecho');
     }
 
     return (
