@@ -1,11 +1,14 @@
 import React,{useState} from 'react'
 import { AddCategory } from './Componentes/AddCategory';
+import { GifGrid } from './Componentes/GifGrid';
 
 export const GitExpertApp = () => {
 
     //const categorias = ['Chelsea', 'Arsenal', 'Leeds'];
    
-    const [categorias, setCategorias] = useState(['Chelsea', 'Arsenal', 'Leeds']);
+    const [categorias, setCategorias] = useState(['Chelsea']);
+
+
 
     //  const handleAdd = () =>{
     //     setCategorias(categ =>[ ...categ, "Fulham"]); 
@@ -19,9 +22,11 @@ export const GitExpertApp = () => {
          
           <ol>
               {
-                  categorias.map( category =>{
-                      return<li key={category} >{category}</li>
-                  })
+                  categorias.map( categoria =>(
+                      <GifGrid 
+                      key={categoria}
+                      categoria={categoria}/>
+                  ))
               }
           </ol>
         </>

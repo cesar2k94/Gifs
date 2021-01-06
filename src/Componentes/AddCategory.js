@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import {GitExpertApp} from '../GitExpertApp';
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({setCategorias}) => {
 
 
-    const [inputValue, setinputValue] = useState('Hola')
+    const [inputValue, setinputValue] = useState('')
 
     const handleInputChange = (e) =>{
         setinputValue(e.target.value);
@@ -33,4 +33,7 @@ export const AddCategory = ({setCategorias}) => {
             </form>
         </div>
     )
+    AddCategory.propTypes={
+        setCategorias: PropTypes.func.isRequired
+    }
 }
