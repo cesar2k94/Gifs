@@ -15,7 +15,7 @@ export const AddCategory = ({setCategorias}) => {
         e.preventDefault()//evitar comportamiento por defecto del form
       
         if (inputValue.trim().length>2) {
-            setCategorias(categ=>[...categ, inputValue])
+            setCategorias(categ=>[ inputValue,...categ])
             setinputValue('')
         }
         

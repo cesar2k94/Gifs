@@ -6,7 +6,7 @@ export const GitExpertApp = () => {
 
     //const categorias = ['Chelsea', 'Arsenal', 'Leeds'];
    
-    const [categorias, setCategorias] = useState(['Ricky and Morty']);
+    const [categorias, setCategorias] = useState(['Chelsea FC']);
 
 
 
