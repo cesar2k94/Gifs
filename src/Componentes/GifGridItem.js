@@ -4,7 +4,7 @@ export const GifGridItem = ({tittle,url}) => {
 
 
     return (
-        <div className="targeta">
+        <div className="animate__fadeInDownBig">
             <img src = {url} alt={tittle}/>
             <p>{tittle}</p>
         </div>
