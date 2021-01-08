@@ -6,7 +6,7 @@ export const GitExpertApp = () => {
 
     //const categorias = ['Chelsea', 'Arsenal', 'Leeds'];
    
-    const [categorias, setCategorias] = useState(['Chelsea FC']);
+    const [categorys, setCategorys] = useState(['Chelsea FC']);
 
 
 
@@ -17,15 +17,15 @@ export const GitExpertApp = () => {
     return (
         <>
           <h2>GitExpertApp</h2>
-          <AddCategory setCategorias={setCategorias}/>
+          <AddCategory setCategorys={setCategorys}/>
           <hr />  
          
           <ol>
               {
-                  categorias.map( categoria =>(
+                  categorys.map( category =>(
                       <GifGrid 
-                      key={categoria}
-                      categoria={categoria}/>
+                      key={category}
+                      category={category}/>
                   ))
               }
           </ol>

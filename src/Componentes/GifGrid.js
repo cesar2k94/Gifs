@@ -1,38 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { getGifs } from '../helpers/getGifs';
+import React /* { useEffect, useState } */ from 'react';
+import { useFetchGifs } from '../hooks/useFetchGifs';
+
 import { GifGridItem } from './GifGridItem';
 
 
-export const GifGrid = ( {categoria} ) => {
+export const GifGrid = ( {category} ) => {
 
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        getGifs(categoria)
-        .then(imgs=>setImages(imgs))
-    }, [categoria])
-    
-    
-
-
+    const {data,loading} = useFetchGifs(category);
+      
     return (
         <>
-            <h3>{categoria}</h3>
-        <div className="targeta-grid">            
+            <h3>{category}</h3>
+            {loading && <p>Loading...</p>}
+            
+       {  <div className="targeta-grid">            
                 {
-                    // images.map(img=>(
+                    // data.map(img=>(
                     //     <li key={img.id}>{img.title}</li>
                        
                     // ))
 
-                    images.map(img=>(
+                    data.map(img=>(
                         <GifGridItem
                         key={img.id} 
                         {...img}  />//se envian todas las propiedades del Url es lo mismo q poner img={img}
                     ))
                 }
       
-        </div>
+        </div> }
         </>
     )
 }
